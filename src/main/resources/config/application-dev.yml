@@ -21,6 +21,13 @@ logging:
     com.tobias.recentlyviewedservice: DEBUG
 
 spring:
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
   devtools:
     restart:
       enabled: true
@@ -36,6 +43,7 @@ spring:
       compression: LZ4
       keyspace-name: recentlyviewedService
       local-datacenter: datacenter1
+
   messages:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:

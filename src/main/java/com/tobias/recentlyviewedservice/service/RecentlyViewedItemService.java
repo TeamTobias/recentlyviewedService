@@ -48,6 +48,7 @@ public interface RecentlyViewedItemService {
      */
     Optional<RecentlyViewedItemDTO> findOne(UUID id);
 
+    List<RecentlyViewedItemDTO> findAllByUserid(Long userId);
     /**
      * Delete the "id" recentlyViewedItem.
      *

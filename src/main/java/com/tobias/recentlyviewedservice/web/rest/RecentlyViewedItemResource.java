@@ -153,11 +153,11 @@ public class RecentlyViewedItemResource {
      * @param id the id of the recentlyViewedItemDTO to retrieve.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the recentlyViewedItemDTO, or with status {@code 404 (Not Found)}.
      */
-    @GetMapping("/recently-viewed-items/{id}")
-    public ResponseEntity<RecentlyViewedItemDTO> getRecentlyViewedItem(@PathVariable UUID id) {
-        log.debug("REST request to get RecentlyViewedItem : {}", id);
-        Optional<RecentlyViewedItemDTO> recentlyViewedItemDTO = recentlyViewedItemService.findOne(id);
-        return ResponseUtil.wrapOrNotFound(recentlyViewedItemDTO);
+    @GetMapping("/recently-viewed-items/{userid}")
+    public ResponseEntity<List<RecentlyViewedItemDTO>> getRecentlyViewedItem(@PathVariable Long userid) {
+        log.debug("REST request to get RecentlyViewedItem : {}", userid);
+        List<RecentlyViewedItemDTO> recentlyViewedItemDTO = recentlyViewedItemService.findAllByUserid(userid);
+        return ResponseEntity.ok().body(recentlyViewedItemDTO);
     }
 
     /**

@@ -82,6 +82,16 @@ public class RecentlyViewedItemServiceImpl implements RecentlyViewedItemService 
     }
 
     @Override
+    public List<RecentlyViewedItemDTO> findAllByUserid(Long userId) {
+        log.debug("Request to get RecentlyViewedItem : {}", userId);
+        return recentlyViewedItemRepository
+            .findAllByUserid(userId)
+            .stream()
+            .map(recentlyViewedItemMapper::toDto)
+            .collect(Collectors.toCollection(LinkedList::new));
+    }
+
+    @Override
     public void delete(UUID id) {
         log.debug("Request to delete RecentlyViewedItem : {}", id);
         recentlyViewedItemRepository.deleteById(id);
