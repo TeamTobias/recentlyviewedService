@@ -1,0 +1,38 @@
+{
+  "changelogDate": "20221214071038",
+  "clientRootFolder": "recentlyviewedService",
+  "databaseType": "cassandra",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "userid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "catalogid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "brandname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catalogname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "catalogunitprice",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "catalogimg",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "recentlyviewedService",
+  "name": "RecentlyViewedItem",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}
