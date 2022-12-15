@@ -6,8 +6,6 @@
 spring:
   application:
     name: recentlyviewedService
-  profiles:
-    active: native
   cloud:
     config:
       uri: http://localhost:8888
